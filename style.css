@@ -1,0 +1,19 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#board{
+    border: black solid 3px;
+    width: 500px;
+    height: 500px;
+}
+
+#board>div{
+    display: flex;
+}
+.square{
+    border: black solid 1px;
+    box-sizing: border-box;
+}
