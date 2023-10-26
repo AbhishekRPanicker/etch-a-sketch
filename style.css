@@ -2,12 +2,13 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
 }
 
 #board{
     border: black solid 3px;
-    width: 500px;
-    height: 500px;
+    width: 700px;
+    height: 700px;
 }
 
 #board>div{
