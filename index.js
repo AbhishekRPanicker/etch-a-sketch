@@ -38,7 +38,7 @@ function manageButtonEvent(event) {
             currentColor = "#ffffff";
             break;
         case "darkening":
-            
+            darkening = true;
             break;
     }
 }
