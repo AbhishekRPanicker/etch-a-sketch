@@ -23,6 +23,11 @@ body{
     display: flex;
 }
 .square{
-    border: black solid 1px;
+    border: #797c7d solid 1px;
     box-sizing: border-box;
+}
+
+button{
+    padding: 10px;
+    margin-right: 10px;
 }

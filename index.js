@@ -3,7 +3,6 @@ let boardSize = 16;
 let currentColor = "#000000";
 let mouseHeld = false;
 let randomizeColor = false;
-let darkening = false;
 
 function changeSquareColor(event) {
     if (randomizeColor) {
@@ -15,6 +14,13 @@ function changeSquareColor(event) {
         targetDiv.style.backgroundColor = currentColor;
     }
 
+}
+
+function removeCurrentSquares(){
+    let squares = document.querySelectorAll(".square");
+    squares.forEach(square => {
+        square.remove();
+    })
 }
 
 function manageButtonEvent(event) {
@@ -35,16 +41,27 @@ function manageButtonEvent(event) {
             currentColor = "#000000";
             break;
         case "erase":
+            randomizeColor = false;
             currentColor = "#ffffff";
             break;
-        case "darkening":
-            darkening = true;
+        case "resize":
+            let newSize = parseInt(prompt("Enter a value between 1 and 100:"));
+            if (Number.isInteger(newSize) && newSize >= 1 && newSize <= 100) {
+                boardSize = newSize;
+                removeCurrentSquares();
+                renderBoard();
+            }else{
+                alert("Invalid Input!");
+            }
             break;
     }
 }
 
 
 function renderBoard() {
+    let buttonsDiv = document.querySelector(".buttons");
+    buttonsDiv.addEventListener('click', manageButtonEvent);
+
     let board = document.querySelector('#board');
     board.addEventListener('click', changeSquareColor);
     board.addEventListener('mouseover', changeSquareColor);
@@ -52,9 +69,9 @@ function renderBoard() {
     document.addEventListener('mouseup', e => mouseHeld = false);
 
 
-    for (let i = 0; i < 16; i++) {
+    for (let i = 0; i < boardSize; i++) {
         let parentDiv = document.createElement("div");
-        for (let j = 0; j < 16; j++) {
+        for (let j = 0; j < boardSize; j++) {
             let squareDiv = document.createElement("div");
             squareDiv.style.width = `${boardSide / boardSize}px`;
             squareDiv.style.height = `${boardSide / boardSize}px`;
@@ -68,5 +85,3 @@ function renderBoard() {
 
 renderBoard()
 
-let buttonsDiv = document.querySelector(".buttons");
-buttonsDiv.addEventListener('click', manageButtonEvent)
