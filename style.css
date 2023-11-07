@@ -2,7 +2,22 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     height: 100vh;
+    background-color: #8BF2B1;
+}
+p{
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    font-size: 80px;
+    color: #00083C;
+    width: 700px;
+}
+div.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .buttons {
@@ -14,9 +29,11 @@ body{
 }
 
 #board{
-    border: black solid 3px;
+    border: #00083C solid 3px;
     width: 700px;
     height: 700px;
+    background-color: white;
+    margin-right: 105px;
 }
 
 #board>div{
@@ -30,4 +47,7 @@ body{
 button{
     padding: 10px;
     margin-right: 10px;
+    background-color: #F28BCC;
+    color: #00083C;
+    border-color: #00083C;
 }
