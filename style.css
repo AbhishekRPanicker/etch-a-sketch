@@ -5,6 +5,7 @@ body{
     flex-direction: column;
     height: 100vh;
     background-color: #8BF2B1;
+    font-family: 'Source Code Pro', monospace;
 }
 p{
     text-align: center;
@@ -33,7 +34,7 @@ div.container{
     width: 700px;
     height: 700px;
     background-color: white;
-    margin-right: 105px;
+    margin-right: 120px;
 }
 
 #board>div{
@@ -50,4 +51,5 @@ button{
     background-color: #F28BCC;
     color: #00083C;
     border-color: #00083C;
+    font-family: 'Source Code Pro', monospace;
 }
